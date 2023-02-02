@@ -1,0 +1,136 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Registro de personas</h4>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Apellido
+                  </th>
+                  <th>
+                    DateTime
+                  </th>
+                  <th>
+                    Address
+                  </th>
+                  <th>
+                    Gender
+                  </th>
+                  <th>
+                    Age
+                  </th>
+                  <th>
+                    Accion
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let a of totalPerson">
+
+                    <td>
+                      {{a.fistName}}
+                    </td>
+
+                    <td>
+                      {{a.lastName}}
+                    </td>
+
+                    <td>
+                      {{a.DateTime}
+                    </td>
+
+                    <td>
+                      {{a.Address}}
+
+                    </td>
+
+                    <td>
+                      {{a.Gender}}
+                    </td>
+                    <td>
+                      {{a.Age}}
+                    </td>
+                    <!-- <button mat-icon-button mat-sm-button class="mr-1"
+                                      color="primary"  (click)="Delete(a)">
+                                    <mat-icon>delete</mat-icon>
+                                </button> -->
+
+                    <button mat-raised-button color="warn" (click)="Delete(a)">Delete</button>
+
+                    <!-- <button mat-fab color="primary" (click)="Delete(a)">
+                                  <mat-icon>delete</mat-icon>
+                                </button> -->
+
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="card-body">
+      <p>Actualiza tus Datos.</p>
+      <form [formGroup]="persona">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Nombre" type="text" formControlName="FistName">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Apellido" type="text" formControlName="LastName">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="DateTime" type="date" formControlName="DateTime">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Address" type="text" formControlName="Address">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Gender" type="text" formControlName="Gender">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Age" type="number" formControlName="Age">
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <button mat-raised-button type="submit" class="btn btn-danger pull-right">Actualizar</button>
+        <div class="clearfix"></div>
+      </form>
+    </div>
+  </div>
+</div>
